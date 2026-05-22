@@ -1,11 +1,16 @@
 import streamlit as st
 import pandas as pd
+import sys
+import os
 from datetime import datetime
 
-from modules.data_aggregator import FinancialDataAggregator
-from modules.risk_model import RiskScoringModel
-from modules.risk_agent import RiskMonitorAgent
-from utils.visualizations import plot_risk_distribution, plot_risk_by_platform, plot_risk_factors
+# Add root to path so imports work whether files are flat or in subfolders
+sys.path.insert(0, os.path.dirname(__file__))
+
+from data_aggregator import FinancialDataAggregator
+from risk_model import RiskScoringModel
+from risk_agent import RiskMonitorAgent
+from visualizations import plot_risk_distribution, plot_risk_by_platform, plot_risk_factors
 
 st.set_page_config(page_title="Risk Monitor", page_icon="📊", layout="wide")
 
